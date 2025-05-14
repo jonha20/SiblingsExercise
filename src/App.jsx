@@ -1,9 +1,10 @@
 import { useState } from "react";
-import "./App.css";
 import { UserContext } from "./context/userContext";
 import Head from "./components/Head";
 import Main from "./components/Main";
+import "normalize.css"
 import "./App.css";
+
 
 function App() {
   const [email, setEmail] = useState("");
