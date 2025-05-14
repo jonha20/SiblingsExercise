@@ -2,10 +2,8 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../../../context/userContext";
 import "./Form.css";
 
-const Form = () => {
-  const { email, updateEmail } = useContext(UserContext);
-  const { data, updateData } = useContext(UserContext);
-
+const Form = ({ updateData }) => {
+  const { updateEmail } = useContext(UserContext);
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -23,7 +21,6 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateData(values);
-    console.log(values.email);
     updateEmail(values.email);
     setValues({
       name: "",
@@ -34,37 +31,37 @@ const Form = () => {
   };
 
   return (
-    <>
-      <form>
-        <input
-          type="text"
-          name="name"
-          value={values.name}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="email"
-          value={values.email}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="url"
-          value={values.url}
-          onChange={handleChange}
-        />
-        <input
-          type="number"
-          name="edad"
-          value={values.edad}
-          onChange={handleChange}
-        />
-        <button type="submit" onClick={handleSubmit}>
-          Enviar
-        </button>
-      </form>
-    </>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="name"
+        value={values.name}
+        onChange={handleChange}
+        placeholder="Nombre"
+      />
+      <input
+        type="text"
+        name="email"
+        value={values.email}
+        onChange={handleChange}
+        placeholder="Email"
+      />
+      <input
+        type="text"
+        name="url"
+        value={values.url}
+        onChange={handleChange}
+        placeholder="URL"
+      />
+      <input
+        type="number"
+        name="edad"
+        value={values.edad}
+        onChange={handleChange}
+        placeholder="Edad"
+      />
+      <button type="submit">Enviar</button>
+    </form>
   );
 };
 

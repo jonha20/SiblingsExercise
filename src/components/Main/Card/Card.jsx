@@ -1,16 +1,7 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../../../context/userContext";
+import React from "react";
 import "./Card.css";
 
-const Card = () => {
-  const { data, updateData } = useContext(UserContext);
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    url: "",
-    edad: "",
-  });
-
+const Card = ({data}) => {
   return (
     <>
       <div className="card-container">

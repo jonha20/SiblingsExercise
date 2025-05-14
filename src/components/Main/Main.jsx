@@ -1,12 +1,25 @@
-import React from "react";
-import Form from './Form';
-import Card from './Card';
+import React, { useState } from "react";
+import Form from "./Form";
+import Card from "./Card";
 
 const Main = () => {
-  return <div>
-    <Form />
-    <Card />
-  </div>;
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    url: "",
+    edad: "",
+  });
+
+  const updateData = (newData) => {
+    setData(newData);
+  };
+
+  return (
+    <div>
+      <Form updateData={updateData} />
+      <Card data={data} />
+    </div>
+  );
 };
 
 export default Main;
