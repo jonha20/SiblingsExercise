@@ -1,0 +1,40 @@
+article {
+    width: 40%;
+    padding: 2vw; /* Ajusta el padding proporcionalmente al ancho de la pantalla */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2vw; /* Ajusta el tamaño del texto proporcionalmente al ancho de la pantalla */
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw; /* Ajusta el espacio entre tarjetas proporcionalmente */
+    justify-content: center;
+    margin-top: 2vw;
+  }
+  
+  article h1 {
+    font-size: 1.5em; /* Relativo al tamaño base del texto del artículo */
+    color: #333;
+    margin-bottom: 1em;
+  }
+  
+  article p {
+    font-size: 1em; /* Relativo al tamaño base del texto del artículo */
+    color: #666;
+  }
+  
+  /* Media query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    article {
+      width: 80%; /* Ocupa más espacio en pantallas pequeñas */
+      font-size: 3vw; /* Aumenta el tamaño del texto proporcionalmente */
+    }
+  
+    .card-container {
+      gap: 3vw; /* Ajusta el espacio entre tarjetas */
+    }
+  }

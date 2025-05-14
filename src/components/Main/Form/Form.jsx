@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../../context/userContext";
+import "./Form.css";
 
 const Form = () => {
   const { email, updateEmail } = useContext(UserContext);

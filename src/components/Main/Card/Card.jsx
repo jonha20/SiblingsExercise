@@ -1,28 +1,28 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { UserContext } from "../../../context/userContext";
+import "./Card.css";
 
 const Card = () => {
-
- const { data, updateData } = useContext(UserContext);
+  const { data, updateData } = useContext(UserContext);
   const [values, setValues] = useState({
     name: "",
     email: "",
     url: "",
-    edad: ""
+    edad: "",
   });
 
-
-
-  return <>
-  
-  <article>
-    <h1>{data.name}</h1>
-    <h2>{data.email}</h2>
-    <h3>{data.url}</h3>
-    <h4>{data.edad}</h4>
-  </article>
-
-  </>;
+  return (
+    <>
+      <div className="card-container">
+        <article>
+          <h1>{data.name}</h1>
+          <p>{data.email}</p>
+          <p>{data.url}</p>
+          <p>{data.edad}</p>
+        </article>
+      </div>
+    </>
+  );
 };
 
 export default Card;
