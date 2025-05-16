@@ -8,11 +8,6 @@ import "./App.css";
 
 function App() {
   const [email, setEmail] = useState("");
-  const [data, setData] = useState([]);
-
-  const updateData = (newData) => {
-    setData(newData);
-  };
 
   const updateEmail = (newEmail) => {
     setEmail(newEmail);
@@ -20,7 +15,7 @@ function App() {
 
   return (
     <>
-      <UserContext.Provider value={{ data, updateData, email, updateEmail }}>
+      <UserContext.Provider value={{ email, updateEmail }}>
         <Head />
         <Main />
       </UserContext.Provider>
